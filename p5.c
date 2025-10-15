@@ -10,6 +10,9 @@
                                -> Dynamic Array -> Size can grow at runtime -> DMA
 
     declare of array -> 
+
+    array name store the base address
+    
         dataType arrayName[size] = {val1,val2,val3.....};
 */
 
