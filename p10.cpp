@@ -18,25 +18,3 @@ void selectionSort(t arr[],int size)
         arr[i] = temp;
     }
 }
-int main()
-{
-    int arr[5] = {17,11,18,23,15};
-    int size = 5;
-
-    cout<<"Array element before sort"<<endl;
-    for(int i = 0;i<size;i++)
-    {
-        cout<<arr[i]<<"\t";
-    }
-    cout<<endl;
-
-    selectionSort<int>(arr,size);
-
-    cout<<"Array element after sort"<<endl;
-    for(int i = 0;i<size;i++)
-    {
-        cout<<arr[i]<<"\t";
-    }
-    cout<<endl;
-
-}

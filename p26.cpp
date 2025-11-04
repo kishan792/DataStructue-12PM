@@ -4,6 +4,7 @@
 
 
 #include<iostream>
+#include"p10.cpp"
 using namespace std;
 
 
@@ -57,14 +58,16 @@ int main()
     int b[5] = {12,14,25,36,41};
     int sizeB = 5;
 
-    int c[sizeA+sizeB];
+    selectionSort(b,sizeB);
 
-    cout<<"Array after merge \n";
-    mergeArray(a,sizeA,b,sizeB,c);
+    // int c[sizeA+sizeB];
 
-    for(int i = 0;i<sizeA+sizeB;i++)
-    {
-        cout<<c[i]<<"\t";
-    }
-    cout<<endl;
+    // cout<<"Array after merge \n";
+    // mergeArray(a,sizeA,b,sizeB,c);
+
+    // for(int i = 0;i<sizeA+sizeB;i++)
+    // {
+    //     cout<<c[i]<<"\t";
+    // }
+    // cout<<endl;
 }
