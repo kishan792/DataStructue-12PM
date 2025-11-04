@@ -1,3 +1,4 @@
+//Time com -> O(n*m)
 #include<iostream>
 using namespace std;
 bool linearSearch(int arr[][4],int rowSize,int colSize,int target)

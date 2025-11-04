@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
-void selectionSort(int arr[],int size)
+template<typename t>
+void selectionSort(t arr[],int size)
 {
     for(int i = 0;i<size;i++)
     {
@@ -29,7 +30,7 @@ int main()
     }
     cout<<endl;
 
-    selectionSort(arr,size);
+    selectionSort<int>(arr,size);
 
     cout<<"Array element after sort"<<endl;
     for(int i = 0;i<size;i++)

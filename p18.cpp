@@ -21,25 +21,15 @@
             //data memebrs
         };
 
-        c++ struct ->keep data memeber public by default
-        c++ class -> keep data member private by default...
-
-
 */
 
 #include<iostream>
 using namespace std;
 
-class Bank{
+struct Student{
     //data members
-    int Acc = 123;
-    string name; 
-public:
-    void intrest()
-    {
-        Acc= 2745678;
-        cout<<Acc;
-    }
+    int age;
+    int roll; 
 };
 
 int main()
@@ -47,9 +37,15 @@ int main()
     int a;
     //printf("Size of int : %d\n",sizeof(int));
 
-    Bank s1;
-    Bank *ptr = &s1;
-    ptr->intrest();
-    //cout<<s1.Acc;
+    Student s1;
+    printf("Size of Student : %d\n",sizeof(Student));
+
+    s1.age = 24;
+    
+    printf("Age of student 1: %d\n",s1.age);
+
+    s1.roll = 9;
+    printf("Roll of student 1: %d\n",s1.roll);
+
 
 }
