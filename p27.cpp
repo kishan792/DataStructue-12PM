@@ -32,6 +32,11 @@ class Stack
             arr = new int[capacity];
             count = -1;
         }
+        ~Stack()
+        {
+            //cout<<"Object going out of scope\n";
+            delete arr;
+        }
     bool empty(); 
     bool full();
     void push(int data);
