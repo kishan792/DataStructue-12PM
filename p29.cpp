@@ -72,8 +72,13 @@ void Queue::push(int data)
         cout<<"Queue overflow"<<endl;
         return;
     }
+    if(empty()==true)
+    {
+        frnt++;
+    }
     arr[rear] = data;
     rear++;
+    cout<<data<<"  :     insterted "<<endl;
 }
 
 int Queue::pop()
@@ -87,7 +92,50 @@ int Queue::pop()
     return arr[frnt];
 }
 
+int Queue::front()
+{
+   if(empty() == true)
+    {
+        cout<<"Queue Underflow"<<endl;
+        return -1;
+    } 
+
+    return arr[frnt];
+}
+
+int Queue::back()
+{
+   if(empty() == true)
+    {
+        cout<<"Queue Underflow"<<endl;
+        return -1;
+    } 
+
+    return arr[rear -1];
+}
+
+int Queue::size()
+{
+    return rear + 1;
+}
+
 int main()
 {
     Queue q;
+
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.push(50);
+
+
+    cout<<"Front Element : "<<q.front()<<endl;
+    cout<<"Back Element : "<<q.back()<<endl;
+
+    q.pop(); 
+
+    cout<<"Front Element : "<<q.front()<<endl;
+    cout<<"Back Element : "<<q.back()<<endl;   
+    q.push(60);
 }
