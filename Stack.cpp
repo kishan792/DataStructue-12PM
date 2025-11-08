@@ -46,13 +46,13 @@ void Stack::push(int data)
     if(full()==true)
     {
         cout<<"Stack overflow"<<endl;
-        cout<<data<<" : Not inserted"<<endl;
+        //cout<<data<<" : Not inserted"<<endl;
         return;
     }
 
     count++;
     arr[count] = data;
-    cout<<data<<" :  inserted"<<endl;
+    //cout<<data<<" :  inserted"<<endl;
 }
 
 int Stack::top()
