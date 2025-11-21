@@ -26,8 +26,53 @@ class LinkedList
     void insertAtHead(int val);
     void printList();
     bool serach(int target);
+    void deleteNode(int target);
+    int middleElement();
 };
+int LinkedList::middleElement()
+{
+    Node *sp = head;
+    Node *fp = head;
 
+    while(fp!=NULL && fp->next!=NULL)
+    {
+        fp = fp->next->next;
+        sp = sp->next;
+    }
+    return sp->data;
+    
+}
+void LinkedList::deleteNode(int target)
+{
+    if(head==NULL)
+    {
+        cout<<"No list created"<<endl;
+        return;
+    }
+    if(head->data==target)
+    {
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+
+    Node *cur = head;
+    Node *prev = NULL;
+    while(cur!=NULL)
+    {
+        if(cur->data == target)
+        {
+            //element found -> delete
+            prev->next = cur->next;
+            delete cur;
+            return;
+        }
+        prev = cur;
+        cur = cur->next;
+    }
+    cout<<"No such element present"<<endl;
+}
 void LinkedList::insertAtHead(int val)
 {
     Node *temp = new Node;
@@ -45,6 +90,7 @@ void LinkedList::printList()
         cout<<cur->data<<"\t";
         cur = cur->next;
     }
+    cout<<endl;
 }
 
 bool LinkedList:: serach(int target)
@@ -74,16 +120,74 @@ int main()
 
     sll.printList();
 
-    bool flag = sll.serach(35);
-    if(flag == true)
-    {
-        cout<<"Element Found"<<endl;
-    }
-    else
-    {
-        cout<<"Element not found"<<endl;
-    }
+    // bool flag = sll.serach(35);
+    // if(flag == true)
+    // {
+    //     cout<<"Element Found"<<endl;
+    // }
+    // else
+    // {
+    //     cout<<"Element not found"<<endl;
+    // }
 
+    sll.deleteNode(32);
     
-    
+    sll.printList();
+
+    int mid = sll.middleElement();  
+    cout<<"Middle Element : "<<mid<<endl;  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        stack<int> st;
+        ListNode* cur = head;
+        while(cur!=NULL)
+        {
+            st.push(cur->val);
+            cur = cur->next;
+        }
+
+        cur = head;
+        while(cur!=NULL)
+        {
+            if(cur->val != st.top())
+            {
+                return false;
+            }
+            st.pop();
+            cur = cur->next;
+        }
+        return true;
+    }
+};
+
+*/
