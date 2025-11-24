@@ -28,6 +28,7 @@ class LinkedList
     bool serach(int target);
     void deleteNode(int target);
     int middleElement();
+    void insertAtMiddle(int val,int target);
 };
 int LinkedList::middleElement()
 {
@@ -108,6 +109,25 @@ bool LinkedList:: serach(int target)
     return false;
 }
 
+void LinkedList:: insertAtMiddle(int val,int target)
+{
+
+    Node* cur = head;
+
+    while(cur!=NULL)
+    {
+        if(cur->data == target)
+        {
+            Node *temp = new Node;
+            temp-> data = val;
+            temp->next = cur->next;
+            cur->next = temp;
+            return;
+        }
+        cur = cur->next;
+    }
+}
+
 int main()
 {
     LinkedList sll;
@@ -130,12 +150,11 @@ int main()
     //     cout<<"Element not found"<<endl;
     // }
 
-    sll.deleteNode(32);
-    
+    sll.insertAtMiddle(80,25);
+
     sll.printList();
 
-    int mid = sll.middleElement();  
-    cout<<"Middle Element : "<<mid<<endl;  
+   
 }
 
 
@@ -164,7 +183,7 @@ int main()
  *     ListNode(int x) : val(x), next(nullptr) {}
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
- */
+ *
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
