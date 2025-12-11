@@ -155,7 +155,7 @@ Node* BinaryTree::insertNode(Node *root,int d)
    root->left = insertNode(root->left,d);
    }
 
-   //height = balance factor -> rotation
+   //height = p5balance factor -> rotation
 
    return root;
 }
